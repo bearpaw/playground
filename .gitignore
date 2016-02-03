@@ -3,3 +3,5 @@ cache
 
 # matlab
 *.mat
+train_mpii_caffe_model.sh
+resume_mpii_caffe_model.sh
