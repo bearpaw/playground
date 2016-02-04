@@ -17,12 +17,12 @@ end
 %%  --- prepare TRAIN images/labels
 disp('prepare TRAIN images/labels...');
 if ~exist([conf.cachedir 'train_data_lmdb.txt'], 'file')
-  
-  %   mkdir([conf.cachedir 'train_image']);
-  %   mkdir([conf.cachedir 'train_label']);
-  %   selectidx = randperm(length(pos_train));
-  %   pos_train = pos_train(selectidx);
-  %   pos_train = pos_train(1:100);
+%   
+%     mkdir([conf.cachedir 'train_image']);
+%     mkdir([conf.cachedir 'train_label']);
+%     selectidx = randperm(length(pos_train));
+%     pos_train = pos_train(selectidx);
+%     pos_train = pos_train(1:10);
   
   namelist = cell(length(pos_train), 1);
   
@@ -34,7 +34,7 @@ if ~exist([conf.cachedir 'train_data_lmdb.txt'], 'file')
       [im, labelmaps] = gen_groundtruth(conf, pos_train(i), 1);
       assert(size(labelmaps,1)==56 && size(labelmaps,2)==56);
       imwrite(im, [conf.cachedir 'train_image/' name '.jpg']);
-      parsave([conf.cachedir 'train_label/' name '.mat'], 'labelmaps');
+      parsave([conf.cachedir 'train_label/' name '.mat'], labelmaps);
     end
     namelist{i} = name;
   end

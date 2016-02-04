@@ -68,7 +68,7 @@ if __name__ == '__main__':
         data_txn.put(key, data_datum.SerializeToString())
         label_txn.put(key, label_datum.SerializeToString())
 
-        if cnt%1000 == 0:
+        if cnt%10000 == 0:
             print 'Processing %d of %d data' % (cnt, nfiles)
             data_txn.commit()
             label_txn.commit()
