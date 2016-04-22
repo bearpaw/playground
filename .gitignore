@@ -5,3 +5,6 @@ cache
 *.mat
 train_mpii_caffe_model.sh
 resume_mpii_caffe_model.sh
+
+# added by hyli
+*.doc
